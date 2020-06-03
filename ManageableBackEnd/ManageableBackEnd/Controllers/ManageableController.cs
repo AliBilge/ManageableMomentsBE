@@ -1,5 +1,6 @@
 ﻿using ClassManageableBackEnd.Models;
 using ManageableBackEnd.Services;
+using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace ManageableBackEnd.Controllers
 
         // TAKES COMPLETED TASK LIST.
         [HttpGet]
-        public async Task<IActionResult> GetManageables([FromQuery(Name ="isdone)] bool isDone)
+        public async Task<IActionResult> GetManageables([FromQuery(Name ="isdone")] bool isDone)
             {
                  return Ok(await _manageableItemService.GetManageableItems(isDone)); 
             }

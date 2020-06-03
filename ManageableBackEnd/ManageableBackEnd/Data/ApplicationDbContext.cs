@@ -17,7 +17,7 @@ namespace ManageableBackEnd.Data
 
         public DbSet<ManageableItem> Items { get; set; }
 
-        protected override void onModelICreating(ModelBuilder builder) 
+        protected override void onModelCreating(ModelBuilder builder) 
         {
             base.OnModelCreating(builder);
         }

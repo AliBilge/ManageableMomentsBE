@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ComTypes;
-using System.Security.Cryptography.X509Certificates;
+//using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace ManageableBackEnd.Services
@@ -50,7 +50,7 @@ namespace ManageableBackEnd.Services
         }
 
         // Deletes item from data base.
-        public async Task<bool> DeleteManageableItem(Guid id);
+        public async Task<bool> DeleteManageableItem(Guid id) 
         {
             var itemToBeRemoved = new ManageableItem { Id = id };
             context.Items.Attach(itemToBeRemoved);
@@ -58,6 +58,5 @@ namespace ManageableBackEnd.Services
             var saveOutcome = await _context.SaveChangesAsync();
             return saveOutcome == 1;
         }
-
     }
 }
