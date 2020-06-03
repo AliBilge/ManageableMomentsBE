@@ -1,5 +1,6 @@
 ﻿using ClassManageableBackEnd.Models;
 using ManageableBackEnd.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace ManageableBackEnd.Services
     {
         // Dependency injection on data access.
         private readonly ApplicationDbContext _context;
+
         public ManageableItemService(ApplicationDbContext context) 
         {
             _context = context;
@@ -30,14 +32,14 @@ namespace ManageableBackEnd.Services
             }
             else
             {
-                return await Context.Items
-                    .where(x => x.IsDone == false)
+                return await _context.Items
+                    .Where(x => x.IsDone == false)
                     .ToArrayAsync();
             }
         }
 
         // Adds new item to the data base.
-        public async Task<bool> AddManageableItem(ManageableBackEnd newItem)
+        public async Task<bool> AddManageableItem(ManageableItem newItem)
         {
             newItem.Id = Guid.NewGuid();
             newItem.IsDone = false;
@@ -53,8 +55,8 @@ namespace ManageableBackEnd.Services
         public async Task<bool> DeleteManageableItem(Guid id) 
         {
             var itemToBeRemoved = new ManageableItem { Id = id };
-            context.Items.Attach(itemToBeRemoved);
-            context.Items.Remove(itemToBeRemoved);
+            _context.Items.Attach(itemToBeRemoved);
+            _context.Items.Remove(itemToBeRemoved);
             var saveOutcome = await _context.SaveChangesAsync();
             return saveOutcome == 1;
         }

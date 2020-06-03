@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ManageableBackEnd.Controllers
 {
     [ApiController]
-    [Router("api/[controller]")]
+    [Route("api/[controller]")]
 
     public class ManageableController : ControllerBase
 
@@ -50,7 +50,7 @@ namespace ManageableBackEnd.Controllers
             {
                 await _manageableItemService.DeleteManageableItem(id);
             }
-            catch (Exception ex) 
+            catch (Exception)
             {
                 return StatusCode(500);
             }

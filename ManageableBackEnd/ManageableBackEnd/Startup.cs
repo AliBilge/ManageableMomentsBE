@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using ManageableBackEnd.Data;
 using ManageableBackEnd.Services;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace ManageableBackEnd
 {
@@ -34,6 +36,12 @@ namespace ManageableBackEnd
 
             services.AddControllers();
 
+            // Swagger Doc for API.
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("version1", new OpenApiInfo { tTitle = "Todo API", Version = "v1" });
+            });
+
             services.AddScoped<IManageableItemService, ManageableItemService>();
         }
 
@@ -54,6 +62,13 @@ namespace ManageableBackEnd
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            // Adding swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/version1/swagger.json", "My API V1");
             });
         }
     }
