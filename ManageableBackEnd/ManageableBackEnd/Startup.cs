@@ -39,7 +39,7 @@ namespace ManageableBackEnd
             // Swagger Doc for API.
             services.AddSwaggerGen(opt =>
             {
-                opt.SwaggerDoc("version1", new OpenApiInfo { tTitle = "Todo API", Version = "v1" });
+                opt.SwaggerDoc("version1", new OpenApiInfo { Title = "Todo API", Version = "v1" });
             });
 
             services.AddScoped<IManageableItemService, ManageableItemService>();

@@ -79,3 +79,4 @@ C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\bin\
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Debug\netcoreapp3.1\ManageableBackEnd.csproj.CoreCompileInputs.cache
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Debug\netcoreapp3.1\ManageableBackEnd.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Debug\netcoreapp3.1\ManageableBackEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
