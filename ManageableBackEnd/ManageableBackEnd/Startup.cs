@@ -29,7 +29,21 @@ namespace ManageableBackEnd
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {// Add DB context.
+        {
+            // Allow localhost to actually contact the server.
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .WithExposedHeaders("WWW-Authenticate")
+                    .WithOrigins("http://localhost:3000")
+                    .AllowCredentials();
+                });
+            });
+            
+            // Add DB context.
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlite(
                 Configuration.GetConnectionString("DefaultConnection")));
@@ -39,7 +53,7 @@ namespace ManageableBackEnd
             // Swagger Doc for API.
             services.AddSwaggerGen(opt =>
             {
-                opt.SwaggerDoc("version1", new OpenApiInfo { Title = "Todo API", Version = "v1" });
+                opt.SwaggerDoc("version1", new OpenApiInfo { Title = "Manageable API", Version = "v1" });
             });
 
             services.AddScoped<IManageableItemService, ManageableItemService>();
