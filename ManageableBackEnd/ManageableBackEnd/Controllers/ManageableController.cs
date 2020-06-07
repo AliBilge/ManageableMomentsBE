@@ -1,16 +1,15 @@
 ﻿using ClassManageableBackEnd.Models;
 using ManageableBackEnd.Services;
-using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 
 namespace ManageableBackEnd.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [EnableCors("CorsPolicy")]
 
     public class ManageableController : ControllerBase
 
@@ -41,12 +40,13 @@ namespace ManageableBackEnd.Controllers
 
             return Ok();
         }
+
            
         // DELETE THE TASK.
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteManageable([FromRoute] Guid id) 
         {
-            try 
+            try
             {
                 await _manageableItemService.DeleteManageableItem(id);
             }

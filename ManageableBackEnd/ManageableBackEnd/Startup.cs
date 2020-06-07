@@ -71,6 +71,9 @@ namespace ManageableBackEnd
 
             app.UseRouting();
 
+            // Added Cors policy.
+            app.UseCors("CorsPolicy");
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

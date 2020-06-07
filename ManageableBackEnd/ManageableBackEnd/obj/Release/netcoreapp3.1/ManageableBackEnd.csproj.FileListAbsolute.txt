@@ -70,9 +70,6 @@ C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\bin\
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.csprojAssemblyReference.cache
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.AssemblyInfoInputs.cache
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.AssemblyInfo.cs
-C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.csproj.CoreCompileInputs.cache
-C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.RazorTargetAssemblyInfo.cache
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.csproj.CopyComplete
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\staticwebassets\ManageableBackEnd.StaticWebAssets.Manifest.cache
@@ -80,3 +77,6 @@ C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.dll
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.pdb
 C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.genruntimeconfig.cache
+C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.csproj.CoreCompileInputs.cache
+C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\BBB\Documents\CapStone\BackEnd\ManageableBackEnd\ManageableBackEnd\obj\Release\netcoreapp3.1\ManageableBackEnd.MvcApplicationPartsAssemblyInfo.cache
