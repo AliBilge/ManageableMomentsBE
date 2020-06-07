@@ -41,7 +41,41 @@ namespace ManageableBackEnd.Controllers
             return Ok();
         }
 
-           
+        [HttpPatch]
+        public async Task<IActionResult> ToggleCompleteOrIncomplete([FromRoute] Guid id)
+        {
+            try
+            {
+                await _manageableItemService.ToggleManageableItemDone(id);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+
+            return Ok();
+        }
+
+        // UPDATES / MODIFIES an already existing TASK.
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateModifyItem([FromRoute] Guid id, [FromBody] ManageableItem manageableItem)
+        {
+            if (!ModelState.IsValid) 
+            {
+                return BadRequest(ModelState);
+            }
+
+            try 
+            {
+                await _manageableItemService.CompletelyUpdateManageableItem(manageableItem);
+            } catch(Exception)
+            {
+                return StatusCode(500);
+            }
+
+            return Ok();
+        }
+
         // DELETE THE TASK.
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteManageable([FromRoute] Guid id) 

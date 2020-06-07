@@ -10,6 +10,8 @@ namespace ManageableBackEnd.Services
     {
         Task<ManageableItem[]> GetManageableItems(bool isDone);
         Task<bool> AddManageableItem(ManageableItem newItem);
+        Task<bool> ToggleManageableItemDone(Guid id);
+        Task<bool> CompletelyUpdateManageableItem(ManageableItem manageableItem);
         Task<bool> DeleteManageableItem(Guid id);
     }
 }

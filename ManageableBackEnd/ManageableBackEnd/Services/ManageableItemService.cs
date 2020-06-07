@@ -23,14 +23,13 @@ namespace ManageableBackEnd.Services
 
         public async Task<ManageableItem[]> GetManageableItems(bool isDone)
         {
-            // Return only done items.
-            if (isDone)
+            if (isDone) // Return only done items.
             {
                 return await _context.Items
                     .Where(x => x.IsDone)
                     .ToArrayAsync();
             }
-            else
+            else // Returns only incomplete items.
             {
                 return await _context.Items
                     .Where(x => x.IsDone == false)
@@ -43,12 +42,31 @@ namespace ManageableBackEnd.Services
         {
             newItem.Id = Guid.NewGuid();
             newItem.IsDone = false;
-            newItem.DueAt = DateTimeOffset.Now.AddDays(1);
+            newItem.DueAt = DateTimeOffset.Now.AddDays(2); // Will overwrite whatever comes in.
 
             _context.Items.Add(newItem);
             var saveOutcome = await _context.SaveChangesAsync();
 
-            return saveOutcome == 1;
+            return saveOutcome == 1; // Failed to add item to the database.
+        }
+
+        public async Task<bool> ToggleManageableItemDone(Guid id)
+        {
+            var manageableItem = await _context.Items
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+            manageableItem.IsDone = !manageableItem.IsDone;
+            _context.Update(manageableItem);
+            var saveOutcome = await _context.SaveChangesAsync();
+            return saveOutcome == 1; // Gives something isn't 1 if it faild to update 1 item.
+        }
+
+        // Updates existing item
+        public async Task<bool> CompletelyUpdateManageableItem(ManageableItem editedItem)
+        {
+            _context.Items.Update(editedItem);
+            var saveOutcome = await _context.SaveChangesAsync();
+            return saveOutcome == 1; // Item should be updated.
         }
 
         // Deletes item from data base.
