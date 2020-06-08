@@ -41,7 +41,7 @@ namespace ManageableBackEnd.Controllers
             return Ok();
         }
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public async Task<IActionResult> ToggleCompleteOrIncomplete([FromRoute] Guid id)
         {
             try
